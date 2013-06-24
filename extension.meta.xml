@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension id="parenthesistabs" status="unreleased" xmlns="http://symphony-cms.com/schemas/extension/1.0">
+	<name>Parenthesis Tabs</name>
+	<description>Groups fields by parentheses</description>
+	<repo type="github">https://github.com/hananils/parenthesistabs</repo>
+	<types>
+		<type>Interface</type>
+	</types>
+	<authors>
+		<author>
+			<name github="hananils" symphony="hananils">Büro für Web- und Textgestaltung</name>
+			<website>http://hananils.de</website>
+		</author>
+	</authors>
+	<releases>
+		<release version="0.1" date="2013-06-24" min="2.3">
+			- Initial Release
+		</release>
+	</releases>
+</extension>
