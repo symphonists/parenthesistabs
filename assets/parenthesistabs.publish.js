@@ -30,7 +30,7 @@
 				var name = label[1];
 
 				// Store name
-				if($.inArray(name, Tabs.tabs)) {
+				if($.inArray(name, Tabs.tabs) == -1) {
 					Tabs.tabs.push(name);
 					Tabs.storage[name] = $([]);
 				}
