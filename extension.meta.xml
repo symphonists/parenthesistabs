@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<extension id="parenthesistabs" status="unreleased" xmlns="http://symphony-cms.com/schemas/extension/1.0">
+<extension id="parenthesistabs" status="released" xmlns="http://symphony-cms.com/schemas/extension/1.0">
 	<name>Parenthesis Tabs</name>
-	<description>Groups fields by parentheses</description>
+	<description>Groups fields in tabs by parentheses</description>
 	<repo type="github">https://github.com/hananils/parenthesistabs</repo>
 	<types>
 		<type>Interface</type>
