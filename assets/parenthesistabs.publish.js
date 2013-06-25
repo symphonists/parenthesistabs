@@ -76,7 +76,7 @@
 
             // if tabs
 
-            if (tabs.length !== 0) {
+            if (tabs.length) {
 
                 // create wrapper
 
