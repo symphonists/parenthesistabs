@@ -87,7 +87,7 @@
                 $(tabs).each(function (key, value) {
 
                     $('<li />', { 'text' : value })
-                        .on('click', select)
+                        .on('click.tab', select)
                         .appendTo(wrapper);
                 });
 
@@ -96,7 +96,7 @@
                 wrapper
                     .appendTo('#context')
                     .find('li:first')
-                    .trigger('click');
+                    .trigger('click.tab');
             }
         };
 
@@ -109,6 +109,26 @@
             fields.all.hide();
 
             fields[tab.text()].show();
+
+            $('input, textarea', '.field:visible')
+                .off('keydown.nexttab')
+                .first()
+                .focus();
+
+            if (tab.next().length) {
+
+                $('input, textarea', '.field:visible').last().on('keydown.nexttab', function (event) {
+
+                    var keyCode = event.keyCode || event.which;
+
+                    if (keyCode === 9) {
+
+                        event.preventDefault();
+
+                        tab.next().trigger('click');
+                    }
+                });
+            }
         };
 
         // public api
