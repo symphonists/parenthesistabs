@@ -20,7 +20,7 @@
 
             // init tabs
 
-            tabs   = [];
+            tabs = [];
 
             // init tabs
 
@@ -33,7 +33,7 @@
 
             $('.field').each(function () {
 
-                var field, node, label, name;
+                var field, label, match, name;
 
                 // get field
 
@@ -41,19 +41,19 @@
 
                 // get field label
 
-                node  = field.find('label').contents().get(0);
+                label = field.find('label').contents().get(0);
 
-                // check field label
+                // check if field label matches pattern
 
-                label = node.nodeValue.match(/\(([\w\W]*?)\)/);
+                match = label.nodeValue.match(/\(([\w\W]*?)\)/);
 
                 // if field label has parenthesis
 
-                if (label) {
+                if (match) {
 
                     // get tab name
 
-                    name = label[1];
+                    name = match[1];
 
                     // store tab
 
@@ -70,7 +70,7 @@
 
                     // remove parenthesis from field label
 
-                    node.nodeValue = node.nodeValue.replace(/\(([\w\W]*?)\)/, '');
+                    label.nodeValue = label.nodeValue.replace(/\(([\w\W]*?)\)/, '');
                 }
             });
 
