@@ -104,16 +104,26 @@
 
             var tab = $(this);
 
+            // select current tab
+
             tab.addClass('selected').siblings().removeClass('selected');
+
+            // hide all tabbed fields
 
             fields.all.hide();
 
+            // show fields for current tab
+
             fields[tab.text()].show();
+
+            // focus on first visible field
 
             $('input, textarea', '.field:visible')
                 .off('keydown.nexttab')
                 .first()
                 .focus();
+
+            // add field tabbing across ui tabs
 
             if (tab.next().length) {
 
