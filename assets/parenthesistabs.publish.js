@@ -41,7 +41,11 @@
 
                 // get field label
 
-                label = field.find('label').contents().get(0);
+                label = field.find('label').contents().filter(function () {
+
+                    return this.nodeType === 3;
+
+                }).get(0);
 
                 // check if field label matches pattern
 
