@@ -31,7 +31,7 @@
 
             // find tabs and store fields
 
-            $('.field').each(function () {
+            $('.field:not(.irrelevant)').each(function () {
 
                 var field, label, match, name;
 
