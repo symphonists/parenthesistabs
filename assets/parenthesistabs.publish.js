@@ -69,7 +69,7 @@
 			Tabs.storage[name].show();
 
 			// Focus first visible field
-			Tabs.contents, Tabs.contents.find('.field:visible:first input:first, .field:visible:first textarea:first').first().trigger('focus.parenthesistabs');
+			Tabs.contents.find('.field:visible:first input:first, .field:visible:first textarea:first').first().trigger('focus.parenthesistabs');
 		},
 
 		switchTab: function(event) {
