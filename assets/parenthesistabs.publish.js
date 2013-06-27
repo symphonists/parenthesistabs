@@ -23,11 +23,12 @@
 
 		findTabs: function() {
 			var field = $(this),
-				node = field.find('label').contents().get(0),
-				label = node.nodeValue.match(/\((.*?)\)/);
+				label = field.find('label'),
+				node = Tabs.getTextNode(label, 0),
+				match = node.nodeValue.match(/\((.*?)\)/);
 
-			if(label != null) {
-				var name = label[1];
+			if(match != null) {
+				var name = match[1];
 
 				// Store name
 				if($.inArray(name, Tabs.tabs) == -1) {
@@ -62,6 +63,19 @@
 
 			Tabs.storage.all.hide();
 			Tabs.storage[name].show();
+		},
+
+		getTextNode: function(element, position) {
+			var nodes = element.contents().filter(function () {
+				return this.nodeType === 3;
+			});
+
+			if(position >= 0) {
+				return nodes[position];
+			}
+			else {
+				return nodes;
+			}
 		}
 	}
 
