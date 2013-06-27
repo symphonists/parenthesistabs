@@ -13,6 +13,9 @@
 		</author>
 	</authors>
 	<releases>
+		<release version="0.2" date="2013-06-27" min="2.3">
+			- Added keyboard navigation via tabs (thanks, @jensscherbl)
+		</release>
 		<release version="0.1" date="2013-06-24" min="2.3">
 			- Initial Release
 		</release>
