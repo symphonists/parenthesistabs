@@ -79,7 +79,7 @@
 		}
 	}
 
-	$(document).on('ready.metakeys', function(event) {
+	$(document).on('ready.parenthesistabs', function(event) {
 		Tabs.init();
 	});
 
