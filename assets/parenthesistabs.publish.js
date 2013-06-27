@@ -9,7 +9,7 @@
 		},
 
 		init: function() {
-			$('.field').each(Tabs.findTabs);
+			$('.field:visible').each(Tabs.findTabs);
 
 			if(Tabs.tabs.length) {
 				Tabs.createWrapper();
