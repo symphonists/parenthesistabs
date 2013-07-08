@@ -1,0 +1,10 @@
+.parenthesistabs-error:not(.selected),
+.parenthesistabs-error:not(.selected):hover {
+	border-color: #CC3311;
+	background-color: #EB6347;
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.parenthesistabs-error:not(.selected):hover {
+	color: #fff;
+}

@@ -16,6 +16,7 @@
 			$callback = Administration::instance()->getPageCallback();
 
 			if(in_array($callback['context']['page'], array('new', 'edit'))) {
+				Administration::instance()->Page->addStylesheetToHead(URL . '/extensions/parenthesistabs/assets/parenthesistabs.publish.css', 'screen', 101, false);
 				Administration::instance()->Page->addScriptToHead(URL . '/extensions/parenthesistabs/assets/parenthesistabs.publish.js', 100, false);
 			}
 		}

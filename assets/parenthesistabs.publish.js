@@ -5,6 +5,7 @@
 		contents: null,
 		wrapper: null,
 		tabs: [],
+		errors: [],
 		storage: {
 			all: $([])
 		},
@@ -40,6 +41,11 @@
 					Tabs.storage[name] = $([]);
 				}
 
+				// Store errors
+				if(field.has('.invalid').length > 0) {
+					Tabs.errors.push(name);
+				}
+
 				// Store field
 				Tabs.storage[name] = Tabs.storage[name].add(field);
 				Tabs.storage.all = Tabs.storage.all.add(field);
@@ -55,9 +61,10 @@
 			}).appendTo('#context');
 		},
 
-		createTabs: function() {
+		createTabs: function(index, string) {
 			$('<li />', {
-				text: this
+				text: string,
+				class: ($.inArray(string, Tabs.errors) == -1 ? '' : 'parenthesistabs-error')
 			}).appendTo(Tabs.wrapper);
 		},
 
