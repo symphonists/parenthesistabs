@@ -93,7 +93,7 @@
 
 		getTextNode: function(element, position) {
 			var nodes = element.contents().filter(function () {
-				return this.nodeType === 3;
+				return this.nodeType === 3 && this.nodeValue.trim() !== '';
 			});
 
 			if(position >= 0) {
