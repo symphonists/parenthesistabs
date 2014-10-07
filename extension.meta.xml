@@ -13,10 +13,13 @@
 		</author>
 	</authors>
 	<releases>
-		<release version="0.2" date="2013-06-27" min="2.3">
+		<release version="1.0.0" date="2014-10-07" min="2.3">
+			- Fixed whitespace handling for newer Symphony versions (thanks, @bzerangue)
+		</release>
+		<release version="0.2.0" date="2013-06-27" min="2.3">
 			- Added keyboard navigation via tabs (thanks, @jensscherbl)
 		</release>
-		<release version="0.1" date="2013-06-24" min="2.3">
+		<release version="0.1.0" date="2013-06-24" min="2.3">
 			- Initial Release
 		</release>
 	</releases>
