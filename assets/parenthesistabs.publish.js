@@ -30,7 +30,11 @@
 			var field = $(this),
 				label = field.find('label'),
 				node = Tabs.getTextNode(label, 0),
+				match = null;
+
+			if (node !== undefined) {
 				match = node.nodeValue.match(/\((.*?)\)/);
+			}
 
 			if(match != null) {
 				var name = match[1];
