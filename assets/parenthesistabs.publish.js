@@ -19,7 +19,11 @@
 				$.each(Tabs.tabs, Tabs.createTabs);
 
 				// Select tab
-				Tabs.wrapper.on('click.parenthesistabs', 'li', Tabs.selectTab).find('li:first').trigger('click.parenthesistabs');
+				if (location.hash) {
+                    			Tabs.wrapper.on('click.parenthesistabs', 'li', Tabs.selectTab).find('li' + location.hash).trigger('click.parenthesistabs');
+                		} else {
+                    			Tabs.wrapper.on('click.parenthesistabs', 'li', Tabs.selectTab).find('li:first').trigger('click.parenthesistabs');
+                		}
 
 				// Switch tab
 				Tabs.contents.on('keydown.parenthesistabs', '.field:visible input, .field:visible textarea', Tabs.switchTab);
@@ -68,6 +72,7 @@
 		createTabs: function(index, string) {
 			$('<li />', {
 				text: string,
+				'data-tab' : 'tab-' + string.toLowerCase(),
 				class: ($.inArray(string, Tabs.errors) == -1 ? '' : 'parenthesistabs-error')
 			}).appendTo(Tabs.wrapper);
 		},
@@ -75,7 +80,8 @@
 		selectTab: function(event) {
 			var selected = $(this).addClass('selected').siblings().removeClass('selected').end(),
 				name = selected.text();
-
+				location.hash = $(this).data('tab');
+            			$('#contents > form').attr('action', window.location.pathname + location.hash	);
 			Tabs.storage.all.hide();
 			Tabs.storage[name].show();
 
